@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html <?php language_attributes(); ?>>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="<?php echo esc_attr( bloginfo( 'charset' ) ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<title>Go! CAMP</title>
-	<link rel="icon" href="img/favicon.ico">
-	<!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
-	<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css"> -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-	<script src="js/script.js"></script>
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
-<body class="top">
+<body <?php body_class( 'top' ); ?>>
 	<header>
 		<div class="header-logo">
-			<a href="index.html">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<img src="img/logo.svg" alt="Go! CAMP" width="240">
+				<?php
+				if ( has_custom_logo() ) {
+					$custom_logo_id = get_theme_mod( 'custom_logo' );
+					$image = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+					var_dump( $image );
+				}
+				?>
 			</a>
 		</div>
 		<button id="hamburger" class="header-button">
