@@ -2,6 +2,10 @@
 function theme_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo' );
+
+	register_nav_menus(array(
+		'global' => 'Global Menu'
+	) );	
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 
@@ -20,3 +24,9 @@ function theme_scripts() {
 	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+
+
+
+
+
+
