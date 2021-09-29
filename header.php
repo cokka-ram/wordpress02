@@ -9,7 +9,6 @@
 	<header>
 		<div class="header-logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<!-- <img src="img/logo.svg" alt="Go! CAMP" width="240"> -->
 				<?php
 				if ( has_custom_logo() ) {
 					$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -17,25 +16,25 @@
 					$html  = '<img src="' . $image[0] . '"';
 					$html .= ' width="' . $image[1] . '"';
 					$html .= ' height="' . $image[2] . '"';
-					$html .= ' alt="' . esc_attr(get_bloginfo( 'name' )) . '">';
+					$html .= ' alt="' . esc_attr( get_bloginfo( 'name' ) ) . '">';
 					echo $html;
 				}
 				?>
 			</a>
 		</div>
 		<?php if ( has_nav_menu( 'global' ) ) : ?>
-		<button id="hamburger" class="header-button">
-			<span class="icon"></span>
-		</button>
-		<nav class="header-gnav">
-			<?php 
+			<button id="hamburger" class="header-button">
+				<span class="icon"></span>
+			</button>
+			<nav class="header-gnav">
+				<?php
 				$args = array(
-					'container'      =>false,
-					'items_wrap'     =>'<ul>%3$s</ul>',
+					'container'      => false,
+					'items_wrap'     => '<ul>%3$s</ul>',
 					'theme_location' => 'global'
 				);
 				wp_nav_menu( $args );
-			 ?>
-		</nav>
+				?>
+			</nav>
 		<?php endif; ?>
 	</header>
