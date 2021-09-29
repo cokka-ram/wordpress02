@@ -2,6 +2,15 @@
 function theme_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo' );
+	add_theme_support( 'post-thumbnails' );
+
+	add_theme_support(
+		'post-formats',
+		array(
+			'image'
+		)
+	);
+	
 
 	register_nav_menus(array(
 		'global' => 'Global Menu'
