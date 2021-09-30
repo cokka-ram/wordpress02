@@ -504,16 +504,30 @@ main {
 .pagetop {
   background-color: #75af57;
   bottom: 30px;
-  height: 40px;
-  position: fixed;
+  height: 40px; 
+  position: fixed; 
   right: 30px;
   width: 40px;
   z-index: 99;
+} 
+
+.pagetop img {
+	border-radius: 50%;	
 }
 
 footer {
   padding: 70px 0 10px;
   text-align: center;
+}
+
+.error404 article,
+.error404{
+	text-align: center:
+}
+
+.error404 h1{
+	color: #333;
+	text-shadow: initial;
 }
 
 @media screen and (min-width: 768px) {
